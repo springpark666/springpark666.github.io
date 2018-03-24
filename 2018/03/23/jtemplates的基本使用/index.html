@@ -1,398 +1,169 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>jtemplates的基本使用 | 萨摩熊</title>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="代码块12345678910111213141516&amp;lt;textarea id=&quot;textarea_record&quot; rows=&quot;&quot; cols=&quot;&quot; style=&quot;display: none;&quot;&amp;gt;			&amp;#123;#foreach $T as record&amp;#125;			&amp;lt;tr&amp;gt;			&amp;lt;td&amp;gt;&amp;#123;$T.record.username&amp;#125;&amp;lt;/t">
-<meta name="keywords" content="jtemplates">
-<meta property="og:type" content="article">
-<meta property="og:title" content="jtemplates的基本使用">
-<meta property="og:url" content="https://springpark666.github.io/2018/03/23/jtemplates的基本使用/index.html">
-<meta property="og:site_name" content="萨摩熊">
-<meta property="og:description" content="代码块12345678910111213141516&amp;lt;textarea id=&quot;textarea_record&quot; rows=&quot;&quot; cols=&quot;&quot; style=&quot;display: none;&quot;&amp;gt;			&amp;#123;#foreach $T as record&amp;#125;			&amp;lt;tr&amp;gt;			&amp;lt;td&amp;gt;&amp;#123;$T.record.username&amp;#125;&amp;lt;/t">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-23T10:07:37.887Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jtemplates的基本使用">
-<meta name="twitter:description" content="代码块12345678910111213141516&amp;lt;textarea id=&quot;textarea_record&quot; rows=&quot;&quot; cols=&quot;&quot; style=&quot;display: none;&quot;&amp;gt;			&amp;#123;#foreach $T as record&amp;#125;			&amp;lt;tr&amp;gt;			&amp;lt;td&amp;gt;&amp;#123;$T.record.username&amp;#125;&amp;lt;/t">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="编码者">
+  <meta name="keywords" content="">
   
-    <link rel="alternate" href="/atom.xml" title="萨摩熊" type="application/atom+xml">
+    <link rel="icon" href="">
   
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
-  
-
+    
+  <title>jtemplates的基本使用 | 萨摩熊</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <div class="outer">
-        <div class="widget-wrap mobile-header">
-  <h3 class="widget-title"></h3>
-  <div class="widget">
-    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
-    <h2 class="author">springpark</h2>
-    <h3 class="description">编码者</h3>
-    <div class="count-box">
-      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>1</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>3</strong><br>标签</div></a>
-    </div>
-    <ul class="blog-link">
-     
-          <a href="/" title="Home">
-            <li>主页</li>
-          </a>
-        
-          <a href="/archives" title="Archives">
-            <li>归档</li>
-          </a>
-        
-          <a href="/categories" title="Categories">
-            <li>分类</li>
-          </a>
-        
-          <a href="/tags" title="Tags">
-            <li>标签</li>
-          </a>
-        
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>萨摩熊</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
     </ul>
   </div>
-</div>
+</header>
 
-        <section id="main"><article id="post-jtemplates的基本使用" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/23/jtemplates的基本使用/" class="article-date">
-  <time class="post-time" datetime="2018-03-23T09:34:26.000Z" itemprop="datePublished">
-    <span class="post-month">3月</span><br/>
-    <span class="post-day">23</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      jtemplates的基本使用
-    </h1>
-  
-
-        <div>
-          
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2018/03/23/jtemplates的基本使用/" class="leancloud_visitors" data-flag-title="jtemplates的基本使用">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>jtemplates的基本使用</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018年03月23日</time>
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#jtemplates" class='tag'>jtemplates</a>
 
 
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"textarea_record"</span> <span class="attr">rows</span>=<span class="string">""</span> <span class="attr">cols</span>=<span class="string">""</span> <span class="attr">style</span>=<span class="string">"display: none;"</span>&gt;</span></span><br><span class="line">			&#123;#foreach $T as record&#125;</span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;$T.record.username&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;$T.record.officename&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;util.formatMinute(new Date($T.record.signDate))&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">			&#123;#if $T.record.imgurl==null||$T.record.imgurl==""&#125;</span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"$&#123;ctxStatic&#125;/kaoqin/images/person.jpeg"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span> /&gt;</span></span><br><span class="line">			&#123;#else&#125;</span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;$T.record.imgurl&#125;"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span> /&gt;</span></span><br><span class="line">			&#123;#/if&#125;</span><br><span class="line">			<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			&#123;#/for&#125;</span><br><span class="line">		<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+            
+          </div>
+          <h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"textarea_record"</span> <span class="attr">rows</span>=<span class="string">""</span> <span class="attr">cols</span>=<span class="string">""</span> <span class="attr">style</span>=<span class="string">"display: none;"</span>&gt;</span></span><br><span class="line">			&#123;#foreach $T as record&#125;</span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;$T.record.username&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;$T.record.officename&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;util.formatMinute(new Date($T.record.signDate))&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">			&#123;#if $T.record.imgurl==null||$T.record.imgurl==""&#125;</span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"$&#123;ctxStatic&#125;/kaoqin/images/person.jpeg"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span> /&gt;</span></span><br><span class="line">			&#123;#else&#125;</span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;$T.record.imgurl&#125;"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span> /&gt;</span></span><br><span class="line">			&#123;#/if&#125;</span><br><span class="line">			<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			&#123;#/for&#125;</span><br><span class="line">		<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="判空"><a href="#判空" class="headerlink" title="判空"></a>判空</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;#if $T.record.imgurl==null||$T.record.imgurl==""&#125;</span><br><span class="line">&#123;#else&#125;</span><br><span class="line"> &#123;#/if&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="格式化日期对象"><a href="#格式化日期对象" class="headerlink" title="格式化日期对象"></a>格式化日期对象</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;util.formatMinute(new Date($T.record.signDate))&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="格式化日期js工具类"><a href="#格式化日期js工具类" class="headerlink" title="格式化日期js工具类"></a>格式化日期js工具类</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.prototype.format = <span class="function"><span class="keyword">function</span>(<span class="params">fmt</span>) </span>&#123; </span><br><span class="line">     <span class="keyword">var</span> o = &#123; </span><br><span class="line">        <span class="string">"M+"</span> : <span class="keyword">this</span>.getMonth()+<span class="number">1</span>,                 <span class="comment">//月份 </span></span><br><span class="line">        <span class="string">"d+"</span> : <span class="keyword">this</span>.getDate(),                    <span class="comment">//日 </span></span><br><span class="line">        <span class="string">"h+"</span> : <span class="keyword">this</span>.getHours(),                   <span class="comment">//小时 </span></span><br><span class="line">        <span class="string">"m+"</span> : <span class="keyword">this</span>.getMinutes(),                 <span class="comment">//分 </span></span><br><span class="line">        <span class="string">"s+"</span> : <span class="keyword">this</span>.getSeconds(),                 <span class="comment">//秒 </span></span><br><span class="line">        <span class="string">"q+"</span> : <span class="built_in">Math</span>.floor((<span class="keyword">this</span>.getMonth()+<span class="number">3</span>)/<span class="number">3</span>), <span class="comment">//季度 </span></span><br><span class="line">        <span class="string">"S"</span>  : <span class="keyword">this</span>.getMilliseconds()             <span class="comment">//毫秒 </span></span><br><span class="line">    &#125;; </span><br><span class="line">    <span class="keyword">if</span>(<span class="regexp">/(y+)/</span>.test(fmt)) &#123;</span><br><span class="line">            fmt=fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="keyword">this</span>.getFullYear()+<span class="string">""</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length)); </span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> o) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"("</span>+ k +<span class="string">")"</span>).test(fmt))&#123;</span><br><span class="line">             fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="built_in">RegExp</span>.$<span class="number">1.</span>length==<span class="number">1</span>) ? (o[k]) : ((<span class="string">"00"</span>+ o[k]).substr((<span class="string">""</span>+ o[k]).length)));</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">    <span class="keyword">return</span> fmt; </span><br><span class="line">&#125;        </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> util=&#123;</span><br><span class="line">		formatDate:<span class="function"><span class="keyword">function</span>(<span class="params">date</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> seperator1 = <span class="string">"-"</span>;</span><br><span class="line">	        <span class="keyword">var</span> year = date.getFullYear();</span><br><span class="line">	        <span class="keyword">var</span> month = date.getMonth() + <span class="number">1</span>;</span><br><span class="line">	        <span class="keyword">var</span> strDate = date.getDate();</span><br><span class="line">	        <span class="keyword">if</span> (month &gt;= <span class="number">1</span> &amp;&amp; month &lt;= <span class="number">9</span>) &#123;</span><br><span class="line">	            month = <span class="string">"0"</span> + month;</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="keyword">if</span> (strDate &gt;= <span class="number">0</span> &amp;&amp; strDate &lt;= <span class="number">9</span>) &#123;</span><br><span class="line">	            strDate = <span class="string">"0"</span> + strDate;</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="keyword">var</span> currentdate = year + seperator1 + month + seperator1 + strDate;</span><br><span class="line">	        <span class="keyword">return</span> currentdate;</span><br><span class="line">		&#125;,</span><br><span class="line">		formatTime:<span class="function"><span class="keyword">function</span>(<span class="params">date</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> date.format(<span class="string">"yyyy-MM-dd hh:mm:ss"</span>);</span><br><span class="line">		&#125;,</span><br><span class="line">		formatMinute:<span class="function"><span class="keyword">function</span>(<span class="params">date</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> date.format(<span class="string">"yyyy-MM-dd hh:mm"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://springpark666.github.io/2018/03/23/jtemplates的基本使用/" data-id="cjf3z36kx0001ocvzkxezrg1c" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jtemplates/">jtemplates</a></li></ul>
-
-    </footer>
-  </div>
-  
+        </section>
+    </article>
     
-<nav id="article-nav">
-  
-  
-    <a href="/2018/03/23/js里面使用jstl标签/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">js里面使用jstl标签</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-
-</section>
         
-          <aside id="sidebar">
-  
-    <div class="widget-wrap">
-  <h3 class="widget-title"></h3>
-  <div class="widget">
-    <h1 class="blog-title">萨摩熊</h1>
-    <h2 class="blog-subtitle">一个伪宅级别的码畜</h2>
-    <ul class="blog-link">
-     
-          <a href="/" title="Home">
-            <li>主页</li>
-          </a>
-        
-          <a href="/archives" title="Archives">
-            <li>归档</li>
-          </a>
-        
-          <a href="/categories" title="Categories">
-            <li>分类</li>
-          </a>
-        
-          <a href="/tags" title="Tags">
-            <li>标签</li>
-          </a>
-        
-    </ul>
   </div>
-</div>
-
-  
-    <div class="widget-wrap">
-  <h3 class="widget-title"></h3>
-  <div class="widget">
-    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
-    <h2 class="author">springpark</h2>
-    <h3 class="description">编码者</h3>
-    <div class="count-box">
-      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>1</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>3</strong><br>标签</div></a>
-    </div>
-
-
-
-    <div class="social-link">
-      
-        <a class="hvr-bounce-in" href="https://github.com/springpark666" target="_blank" title="Github">
-          Github
-        </a>
-      
-    </div>
-
-    <div class="friend-link">
-      <h2>友情链接</h2>
-      
-    </div>
-  </div>
-</div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy;2017 - 2018 springpark<br>
-      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
-      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
-      
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码块"><span class="toc-number">1.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判空"><span class="toc-number">2.</span> <span class="toc-text">判空</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式化日期对象"><span class="toc-number">3.</span> <span class="toc-text">格式化日期对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式化日期js工具类"><span class="toc-number">4.</span> <span class="toc-text">格式化日期js工具类</span></a></li></ol>
+        </div>
     </div>
     
+  </aside>
+</main>
+
+
+
+  <footer>
+  <div class="copyright">
+    <div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
+    </div>
   </div>
 </footer>
-    </div>
-    
 
-<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
 <script>
-new WOW().init();
-</script>   
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
 
+  document.body.addEventListener('touchstart', function(){});
+  
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
 
-  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
-  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
-  <script src="/plugin/galmenu/GalMenu.js"></script>
-  <div class="GalMenu GalDropDown">
-      <div class="circle" id="gal">
-        <div class="ring">
-          
-            <a href="/" title="" class="menuItem">首页</a>
-          
-            <a href="/tags" title="" class="menuItem">标签</a>
-          
-            <a href="/categories" title="" class="menuItem">分类</a>
-          
-            <a href="/archives" title="" class="menuItem">归档</a>
-          
-            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
-          
-            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
-          
-        </div>
-        
-          <audio id="audio" src="#"></audio>
-        
-      </div> 
-</div>
-<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
-  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
-    for (var i = 0,
-    l = items.length; i < l; i++) {
-      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
-      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
-    }</script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('body').GalMenu({
-      'menu': 'GalDropDown'
-    })
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
   });
-</script>
 
-  <section class="hidden-xs"> 
-  <ul class="cb-slideshow"> 
-    <li><span>苟利</span></li> 
-    <li><span>国家</span></li> 
-    <li><span>生死以</span></li> 
-    <li><span>岂能</span></li> 
-    <li><span>祸福</span></li> 
-    <li><span>趋避之</span></li> 
-  </ul>
-</section>
-<script src="/js/script.js"></script>
-
-
-
-
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("vsAQch4EEmDVKa0XBn1S1nb9-gzGzoHsz", "SEoCQOWmtj2f1XGCzs54p8VA");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+      
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
         }
-      });
-    }
+      })
 
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.article-title').length > 1) {
-        showTime(Counter);
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
       }
-    });
-  </script>
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<script src="/lib/jquery.fancybox.min.js"></script>
 
 
-
-
-
-  </div>
 </body>
 </html>
